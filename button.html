@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Are you gay?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+      background: #fffbe7;
+    }
+    h1 {
+      font-size: 2rem;
+      color: #6b4c35;
+    }
+    .buttons {
+      margin-top: 20px;
+      position: relative;
+      height: 300px;
+    }
+    button {
+      font-size: 1.5rem;
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    #yesBtn {
+      background-color: #6bdf6b;
+    }
+    #noBtn {
+      background-color: #f76c6c;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <h1>Are you gay?</h1>
+  <div class="buttons">
+    <button id="yesBtn">Yes</button>
+    <button id="noBtn">No</button>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+
+    noBtn.addEventListener("mouseover", moveButton);
+    noBtn.addEventListener("touchstart", moveButton); // for mobile touch
+
+    yesBtn.addEventListener("click", () => {
+      alert("Congrats now urr officially Gay ❤");
+    });
+
+    function moveButton() {
+      const container = document.querySelector(".buttons");
+      const maxX = container.clientWidth - noBtn.offsetWidth;
+      const maxY = container.clientHeight - noBtn.offsetHeight;
+
+      const randX = Math.random() * maxX;
+      const randY = Math.random() * maxY;
+
+      noBtn.style.left = ${randX}px;
+      noBtn.style.top = ${randY}px;
+    }
+  </script>
+</body>
+</html>
